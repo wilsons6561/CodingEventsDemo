@@ -3,13 +3,4 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
-
-
-
-  <ItemGroup>
-    <Folder Include="Views\Events\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Remove="Views\Events\Add.cshtml" />
-  </ItemGroup>
 </Project>
