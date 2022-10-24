@@ -2,6 +2,9 @@
 <p>
     <a asp-controller="Events" asp-action="Add">Add Event</a>
 </p>
+<p>
+    <a asp-controller="Events" asp-action="Delete">Delete Event</a>
+</p>
 
 @if(ViewBag.events.Count == 0)
 {
@@ -9,6 +12,9 @@
 } else {
     <table>
         <tr>
+             <th>
+                ID
+            </th>
             <th>
                 Name
             </th>
@@ -16,11 +22,15 @@
                 Description
             </th>
         </tr>
-        @foreach (KeyValuePair<string, string> evt in ViewBag.events)
+        @foreach (var evt in ViewBag.events)
         {
             <tr>
-                <td>@evt.Key</td>
-                <td>@evt.Value</td>
+                
+                <td>@evt.Id</td>
+                
+                <td>@evt.Name</td>
+                <td>@evt.Description</td>
+                <td><a asp-controller="Events" asp-action="Edit" asp-route-id="@evt.Id">Edit Event</a></td>
             </tr>
         }
     </table>
